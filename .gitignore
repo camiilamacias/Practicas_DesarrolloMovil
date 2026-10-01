@@ -32,3 +32,21 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Android Studio generated files
+.gradle/
+build/
+.idea/
+*.iml
+*.apk
+*.ap_
+*.dex
+*.so
+.kotlin/
+bin/
+gen/
+out/
+local.properties
+
+# macOS
+.DS_Store
