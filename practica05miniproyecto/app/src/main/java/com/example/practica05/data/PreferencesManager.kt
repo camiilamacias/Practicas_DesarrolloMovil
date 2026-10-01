@@ -30,6 +30,11 @@ class PreferencesManager(context: Context) {
             .apply()
     }
 
+    /** Elimina el registro guardado. */
+    fun clearRegistro() {
+        sharedPreferences.edit().clear().apply()
+    }
+
     fun getMatricula(): String = sharedPreferences.getString(KEY_MATRICULA, "") ?: ""
 
     fun getNombre(): String = sharedPreferences.getString(KEY_NOMBRE, "") ?: ""

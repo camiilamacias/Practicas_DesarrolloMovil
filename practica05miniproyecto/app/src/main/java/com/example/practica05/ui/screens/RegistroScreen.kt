@@ -18,6 +18,7 @@ import androidx.compose.material3.ExposedDropdownMenuAnchorType
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
@@ -173,6 +174,22 @@ fun RegistroScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Registrar")
+        }
+
+        // Borrar - limpia el formulario y el registro guardado
+        OutlinedButton(
+            onClick = {
+                preferencesManager.clearRegistro()
+                matricula = ""
+                nombre = ""
+                carrera = carreras[0]
+                turno = "Matutino"
+                activo = true
+                Toast.makeText(context, "Datos borrados", Toast.LENGTH_SHORT).show()
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Borrar")
         }
     }
 }
