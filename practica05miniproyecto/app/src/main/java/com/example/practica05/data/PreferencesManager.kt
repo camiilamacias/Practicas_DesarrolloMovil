@@ -3,6 +3,10 @@ package com.example.practica05.data
 import android.content.Context
 import android.content.SharedPreferences
 
+/**
+ * Encapsula el acceso a SharedPreferences para guardar y leer
+ * el último registro de estudiante capturado.
+ */
 class PreferencesManager(context: Context) {
 
     private val sharedPreferences: SharedPreferences =

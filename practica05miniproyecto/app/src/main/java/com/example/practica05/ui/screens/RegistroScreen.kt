@@ -1,4 +1,4 @@
-package com.example.practica05
+package com.example.practica05.ui.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -42,6 +42,14 @@ private val carreras = listOf(
     "Derecho"
 )
 
+/**
+ * Formulario de registro de estudiantes.
+ *
+ * Al abrirse recupera el último registro guardado en SharedPreferences y,
+ * al presionar "Registrar", guarda los datos y navega al detalle.
+ *
+ * @param onRegistrar se invoca con los datos capturados cuando el formulario es válido.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegistroScreen(

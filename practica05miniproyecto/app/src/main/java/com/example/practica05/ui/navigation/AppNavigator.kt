@@ -1,4 +1,4 @@
-package com.example.practica05
+package com.example.practica05.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -6,7 +6,16 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.practica05.ui.screens.DetalleScreen
+import com.example.practica05.ui.screens.RegistroScreen
 
+/**
+ * Grafo de navegación de la app.
+ *
+ * Define dos destinos:
+ * - "registro": formulario de captura del estudiante.
+ * - "detalle/...": confirmación con los datos recibidos como argumentos de ruta.
+ */
 @Composable
 fun AppNavigation() {
     val navController = rememberNavController()
