@@ -1,18 +1,10 @@
 package com.example.practica03
 
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-
 @Composable
 fun ProfileScreen(
     nombre: String,
     correo: String,
-    onBackClick: () -> Unit
+    onBackClick: () → Unit
 ) {
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -39,18 +31,14 @@ fun ProfileScreen(
                 Column(
                     modifier = Modifier.padding(20.dp)
                 ) {
-                    Text(
-                        text = "Nombre:",
-                        style = MaterialTheme.typography.labelLarge
-                    )
+                    Text(text = "Nombre:", style =
+                        MaterialTheme.typography.labelLarge)
                     Text(text = nombre, fontSize = 18.sp)
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    Text(
-                        text = "Correo:",
-                        style = MaterialTheme.typography.labelLarge
-                    )
+                    Text(text = "Correo:", style =
+                        MaterialTheme.typography.labelLarge)
                     Text(text = correo, fontSize = 18.sp)
                 }
             }
