@@ -1,4 +1,4 @@
-package com.example.practica05
+package com.example.practica05.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * Pantalla de confirmación que muestra los datos del estudiante registrado.
+ *
+ * @param onVolver acción para regresar a la pantalla de registro.
+ */
 @Composable
 fun DetalleScreen(
     matricula: String,
@@ -62,6 +67,7 @@ fun DetalleScreen(
     }
 }
 
+/** Fila de etiqueta + valor usada dentro de la tarjeta de detalle. */
 @Composable
 private fun DetalleItem(label: String, value: String) {
     Column {

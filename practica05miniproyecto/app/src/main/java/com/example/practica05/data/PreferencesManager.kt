@@ -3,6 +3,10 @@ package com.example.practica05.data
 import android.content.Context
 import android.content.SharedPreferences
 
+/**
+ * Encapsula el acceso a SharedPreferences para guardar y leer
+ * el último registro de estudiante capturado.
+ */
 class PreferencesManager(context: Context) {
 
     private val sharedPreferences: SharedPreferences =
@@ -24,6 +28,11 @@ class PreferencesManager(context: Context) {
             .putString(KEY_TURNO, turno)
             .putBoolean(KEY_ACTIVO, activo)
             .apply()
+    }
+
+    /** Elimina el registro guardado. */
+    fun clearRegistro() {
+        sharedPreferences.edit().clear().apply()
     }
 
     fun getMatricula(): String = sharedPreferences.getString(KEY_MATRICULA, "") ?: ""

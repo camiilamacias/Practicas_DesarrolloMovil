@@ -1,4 +1,4 @@
-package com.example.practica05
+package com.example.practica05.ui.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -18,6 +18,7 @@ import androidx.compose.material3.ExposedDropdownMenuAnchorType
 import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
@@ -42,6 +43,14 @@ private val carreras = listOf(
     "Derecho"
 )
 
+/**
+ * Formulario de registro de estudiantes.
+ *
+ * Al abrirse recupera el último registro guardado en SharedPreferences y,
+ * al presionar "Registrar", guarda los datos y navega al detalle.
+ *
+ * @param onRegistrar se invoca con los datos capturados cuando el formulario es válido.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegistroScreen(
@@ -165,6 +174,22 @@ fun RegistroScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Registrar")
+        }
+
+        // Borrar - limpia el formulario y el registro guardado
+        OutlinedButton(
+            onClick = {
+                preferencesManager.clearRegistro()
+                matricula = ""
+                nombre = ""
+                carrera = carreras[0]
+                turno = "Matutino"
+                activo = true
+                Toast.makeText(context, "Datos borrados", Toast.LENGTH_SHORT).show()
+            },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Borrar")
         }
     }
 }
